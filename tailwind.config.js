@@ -7,10 +7,36 @@ module.exports = {
   ],
   theme: {
     extend: {
+      flex: {
+        '2': '2 2 0%',
+        '3': '3 3 0%',
+        
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'msc1': 'url("/music-2.jpg")',
+        'msc2': 'url("/music-2.jpg")',
+        'msc3': 'url("/music-3.jpg")'
+      },
+      colors:{
+        customWhite:"#F0F0F0",
+        blackk:"rgb(26,26,33)",
+        backWhite:"rgb(247,247,247)",
+
+      },
+      screens: {
+
+        'lg': {'max': '1024px', },
+        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+  
+        'mmd': { 'max': '860px'},
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+        'sm': { 'max': '640px'},
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+  
+        'xs': { 'max': '480px'},
+        
+  
+     
       },
     },
   },
