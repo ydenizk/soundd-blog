@@ -25,7 +25,7 @@ function CategoryPage({ params }) {
             className={`w-full max-w-6xl text-center mb-10 text-white   
         py-2 tracking-wide uppercase text-lg font-bold rounded mx-auto ${singleCategory.color}`}
           >
-            {" "}
+       
             {params.category}{" "}
           </h1>
           <div className="flex justify-center items-start gap-10 my-16 mx-4">
@@ -37,25 +37,25 @@ function CategoryPage({ params }) {
               className="opacity-70 contrast-200"
             />
             <h1
-              className="tracking-wide capitalize font-bold text-blackk mt-8 
+              className="tracking-wide capitalize font-bold  mt-8 
           text-4xl"
             >
-              {" "}
+       
               {singleCategory.details[1].about}...{" "}
             </h1>
           </div>
         </div>
 
         {/* alt taraf */}
-        <div className="flex justify-between py-12 bg-white px-6">
+        <div className="flex justify-between py-12  px-6">
           <div>
             {singleCategory.details.map((single) => {
               const { id, date, author, title, about, desc, img } = single;
               return (
                 <div
                   key={id}
-                  className=" w-[580px] h-auto py-6 mb-8 bg-white  
-            hover:bg-customWhite transition-all shadow-lg hover:shadow-none  duration-500 "
+                  className=" w-[580px] h-auto py-6 mb-8   
+         transition-all shadow-lg   duration-500 "
                 >
                   <h1 className="px-5 pb-2 text-sm ">
                     Posted by:

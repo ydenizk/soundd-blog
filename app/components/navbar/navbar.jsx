@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { LuShoppingCart, LuSearch, LuPlusCircle } from "react-icons/lu";
-import OnoffBtn from "../onoffBtn/onoffBtn";
+import DarkMode from "../darkMode/darkMode";
+
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -112,13 +113,13 @@ function Navbar() {
               </div>
             </li>
          
-            <li className="ml-2 border border-slate-400 p-1 transition hover:bg-slate-100 ">
+            <li className="ml-2 border border-slate-400 p-1 transition hover:bg-slate-400 ">
               <Link href="logout">Logout</Link>
             </li> */}
                <li className="">
-              <OnoffBtn />
+              <DarkMode />
             </li>
-                 <li className="ml-6 border border-slate-400 p-1 transition hover:bg-slate-100 ">
+                 <li className="ml-6 border border-slate-400 p-1 transition hover:bg-slate-400 ">
               <Link href="login">Login</Link>
             </li> 
 

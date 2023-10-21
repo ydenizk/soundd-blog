@@ -6,7 +6,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="w-full h-80  text-stone-200 p-0">
+    <div className="w-full h-80  text-stone-200 border-t border-white p-0">
       <div
         className="h-64  bg-blackk flex gap-x-8 px-16 mx-auto items-center justify-around 
          mmd:grid-cols-2">

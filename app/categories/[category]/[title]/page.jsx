@@ -23,7 +23,7 @@ function ProductPageTitle({ params }) {
   }
 
   return (
-    <div className="flex justify-content items-center py-16 bg-white">
+    <div className="flex justify-content items-center py-16 ">
   
       
             <div className="w-full max-w-3xl h-auto  flex flex-col gap-12 items-center mx-auto">
@@ -52,11 +52,11 @@ function ProductPageTitle({ params }) {
           </h2>
           <h3 className="text-xl ">~ </h3>
 
-          <p className="my-8 font-light font-serif text-blackk tracking-wide leading-7 text-left">
+          <p className="my-8 font-light font-serif  tracking-wide leading-7 text-left">
             {singleProduct.desc}
           </p>
           <Image src="/single.jpg" width={720} height={514} />
-          <p className="my-8 opacity-90 font-light font-serif text-blackk tracking-wide leading-7 text-left">
+          <p className="my-8 opacity-90 font-light font-serif  tracking-wide leading-7 text-left">
             {singleProduct.desc}
           </p>
         </div>

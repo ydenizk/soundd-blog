@@ -7,7 +7,7 @@ import SideCard from "../sideCard/sideCard";
 
 function Card() {
   return (
-    <section className="w-full  bg-white flex justify-center items-center ">
+    <section className="w-full  flex justify-center items-center ">
       <div className="w-full max-w-6xl p-6 flex justify-between ">
         {/* main Card..... */}
         <div>
@@ -16,8 +16,8 @@ function Card() {
             return (
               <div
                 key={id}
-                className=" w-[580px] h-auto py-6  mb-8 bg-white transition
-                shadow-lg   hover:bg-customWhite  hover:shadow-none duration-500 "
+                className=" w-[580px] h-auto py-6  mb-8  transition
+                shadow-lg    duration-500 "
               >
                 <h1 className="px-5 pb-2 text-sm ">
                   Posted by:

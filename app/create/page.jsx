@@ -22,7 +22,7 @@ function CreateNew() {
                 +
               </div>
             </Link>
-            <p className="ml-1 whitespace-nowrap  font-semibold">Create New</p>
+            <p className="ml-1 whitespace-nowrap text-blackk   font-semibold">Create New</p>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ function CreateNew() {
               <option value="hevay-metal">Heavy Metal</option>
     
             </select>
-            <button className="p-1 px-4 bg-blackk text-slate-100  hover:bg-slate-800 transition  border rounded">Send</button>
+            <button className="p-1 px-4 bg-blackk text-slate-100  hover:bg-slate-700 transition  border rounded">Send</button>
           </div>
         </form>
       </div>

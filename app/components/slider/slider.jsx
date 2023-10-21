@@ -54,7 +54,7 @@ function Slider() {
                   {desc}{" "}
                 </p>
 
-                <Link href={lnk} className="  p-3  bg-black text-customWhite">
+                <Link href={lnk} className="  p-3  bg-slate-700 transition hover:bg-slate-600 duration-300 text-customWhite">
                   Go to {`${genre}`}{" "}
                 </Link>
               </div>
