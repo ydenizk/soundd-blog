@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-function LoginPage() {
+function SignInPage() {
   return (
     <div className="flex justify-center items-center py-24 ">
       <div className="w-full max-w-xs  p-2 flex flex-col justify-center items-center">
@@ -49,4 +49,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignInPage;

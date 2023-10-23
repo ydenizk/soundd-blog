@@ -15,10 +15,10 @@ function CategoryBtns() {
               <div
                 key={id}
                 className="flex justify-between  items-center whitespace-nowrap bg-gray-700 transition
-                 hover:bg-slate-600 rounded p-2 px-4"
+                 hover:bg-slate-600 rounded p-2 px-4 sm:px-2 sm:p-1"
               >
-                    <div className={`w-3 h-3  rounded-full mr-2 ${color}`}></div>
-                <Link href={`/categories/${category}`} className="text-customWhite text-sm tracking-wide"> {name} </Link>
+                    <div className={`w-3 h-3  rounded-full mr-2 xs:hidden ${color}`}></div>
+                <Link href={`/categories/${category}`} className="text-customWhite text-sm tracking-wide xs:text-xs"> {name} </Link>
               </div>
             );
           })}

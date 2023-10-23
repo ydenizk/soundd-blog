@@ -31,26 +31,27 @@ function Slider() {
 
   return (
     <div className="flex flex-col justify-center items-center py-8 ">
-      <div className="w-full max-w-6xl flex items-center  px-6    relative overflow-hidden h-[420px]">
+      <div className="w-full max-w-6xl flex items-center   px-6     relative overflow-hidden h-[420px]">
         {banner.map((dt) => {
           const { id, title, desc, img, lnk, genre } = dt;
 
           return (
             <div
-              className="flex justify-center items-center w-full max-w-6xl  gap-8 mx-auto px-6  h-96   transition-transform duration-500  "
+              className="flex justify-center items-center w-full max-w-6xl  gap-8 mx-auto px-6  h-96   
+              transition-transform duration-500 "
               key={id}
               style={{ transform: `translateX(-${imgIndex * 100}%)` }}
             >
               <div
-                className="bg-cover bg-center w-[590px] h-[380px] flex-2 "
+                className="bg-cover bg-center w-[590px] h-[380px] flex-2 mmd:flex-1 "
                 style={{ backgroundImage: `url(${img})` }}
               ></div>
 
-              <div className=" w-[540px] p-2 flex-1 ">
-                <h1 className="text-2xl font-extrabold  uppercase tracking-wide ">
+              <div className=" w-[540px] p-2 flex-1 sm:hidden ">
+                <h1 className="text-2xl font-extrabold  uppercase tracking-wide  ">
                   {title}{" "}
                 </h1>
-                <p className=" w-full tracking-wide font-light pr-4 my-2 mb-6">
+                <p className=" w-full tracking-wide font-light pr-4 my-2 mb-6 ">
                   {desc}{" "}
                 </p>
 

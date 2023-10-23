@@ -1,72 +1,83 @@
 import React from "react";
-import data from "@/app/maninData";
+//import data from "@/app/maninData";
 import Image from "next/image";
 import Link from "next/link";
 import { HiPlay } from "react-icons/hi2";
-import SideCard from "../sideCard/sideCard";
+//import SideCard from "../sideCard/sideCard";
 
-function Card() {
+function Card({ dt }) {
   return (
-    <section className="w-full  flex justify-center items-center ">
-      <div className="w-full max-w-6xl p-6 flex justify-between ">
-        {/* main Card..... */}
-        <div>
-          {data.map((dt) => {
-            const { id, details, category, name, color } = dt;
-            return (
-              <div
-                key={id}
-                className=" w-[580px] h-auto py-6  mb-8  transition
+    <div>
+      <div
+        className=" w-[580px] h-auto py-6  mb-8  transition
                 shadow-lg    duration-500 "
+      >
+        <h1 className="px-5 pb-2 text-sm ">
+          Posted by:
+          <span className="font-bold tracking-wide capitalize pl-1">
+            {dt.details[0].author}
+          </span>
+          {dt.details[0].date}
+        </h1>
+        <Link href={`/categories/${dt.category}/${dt.details[0].url}`}>
+          {dt.details[0].img && (
+            <Image
+              src={dt.details[0].img}
+              width={540}
+              height={240}
+              className="mx-auto rounded opacity-80 "
+            />
+          )}
+        </Link>
+
+        <div className="px-4 pt-2">
+          <div className="flex justify-between items-center">
+            <Link
+              href={`/categories/${dt.category}`}
+              className={`text-xs uppercase p-1 ${dt.color} text-white rounded`}
+            >
+              {dt.category}
+            </Link>
+ 
+            {/* <div className="flex justify-center items-center gap-2">
+              <Link
+                href="/editCard"
+                className="text-xs capitalize p-1 bg-blue-500 rounded text-white"
               >
-                <h1 className="px-5 pb-2 text-sm ">
-                  Posted by:
-                  <span className="font-bold tracking-wide capitalize pl-1">
-                    {details[0].author}
-                  </span >
-                  {details[0].date}
-                </h1>
-                <Link href={`/categories/${category}/${details[0].title}`}>
-                  <Image
-                    src={details[0].img}
-                    width={540}
-                    height={240}
-                    className="mx-auto rounded opacity-80 "
-                  />
-                </Link>
+                Edit
+              </Link>
+              <Link
+                href="/deleteCard"
+                className="text-xs capitalize p-1 bg-red-700 rounded text-white"
+              >
+                Delete
+              </Link>
+            </div> */}
+          </div>
 
-                <div className="px-4 pt-2">
-                  <Link
-                    href={`/categories/${category}`}
-                    className={`text-xs uppercase p-1 ${color} text-white rounded`}
-                  >
-                    {category}
-                  </Link>
-                  <h1 className="mt-4 font-bold text-xl leading-6 ">
-                    {details[0].about}
-                  </h1>
-                  <p className="text-sm capitalize my-3">
-                    {details[0].desc.slice(0, 200)}...
-                    <Link
-                      href={`/categories/${category}/${details[0].title}`}
-                      className="font-semibold transition hover:text-red-700 "
-                    >
-                      READ MORE
-                    </Link>
-                  </p>
-                  <HiPlay className="text-2xl" />
-                  <span></span>
-                </div>
-              </div>
-            );
-          })}
+          <h1 className="mt-4 font-bold text-xl leading-6 ">
+            {dt.details[0].about}
+          </h1>
+          <p className="text-sm capitalize my-3">
+            {dt.details[0].desc.slice(0, 200)}...
+            <Link
+              href={`/categories/${dt.category}/${dt.details[0].url}`}
+              className="font-semibold transition hover:text-red-700 "
+            >
+              READ MORE
+            </Link>
+          </p>
+          <Link
+            href={`https://www.youtube.com/results?search_query=${dt.details[0].url}`}
+            target="_blank"
+            className="
+        font-semibold "
+          >
+            <HiPlay className="text-2xl transition duration-300 hover:text-red-700  " />
+          </Link>
         </div>
-
-        {/* main card............. */}
-
-        <SideCard />
       </div>
-    </section>
+    </div>
   );
 }
 

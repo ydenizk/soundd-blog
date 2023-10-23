@@ -12,13 +12,13 @@ const {toggleBtn,mode}=useContext(ThemeContext)
 
   return (
     <div onClick={toggleBtn}
-      className="w-12 h-6 border border-pink-950 rounded-full 
+      className="w-10 h-5 border border-slate-600 rounded-full 
     flex justify-around items-center  relative  cursor-pointer "
     >
-      <div className="text-xs text-pink-950">D</div>
-      <div className="text-xs text-pink-950">L</div>
+      <div className="text-xs text-slate-600">D</div>
+      <div className="text-xs text-slate-600">L</div>
       <div
-        className={`h-5 w-6 bg-pink-950  rounded-full absolute  ${
+        className={`h-4 w-5 bg-slate-600  rounded-full absolute  ${
           mode === "light" ? "right-[3px] " : "left-[3px] "
         } `}
       ></div>

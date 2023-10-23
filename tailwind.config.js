@@ -28,8 +28,12 @@ module.exports = {
         'lg': {'max': '1024px', },
         // => @media (min-width: 1024px and max-width: 1279px) { ... }
   
-        'mmd': { 'max': '860px'},
+        'mmd': { 'max': '890px'},
         // => @media (min-width: 768px and max-width: 1023px) { ... }
+        'mmd2': { 'max': '790px'},
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+
         'sm': { 'max': '640px'},
         // => @media (min-width: 640px and max-width: 767px) { ... }
   
