@@ -3,19 +3,27 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LuShoppingCart, LuSearch, LuPlusCircle } from "react-icons/lu";
 import DarkMode from "../darkMode/darkMode";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { status,data:session } = useSession();
+  const router = useRouter();
 
+  /* Dark MOde... */
   const handleMouseEnter = () => {
     setOpen(true);
   };
-
   const handleMouseLeave = () => {
     setOpen(false);
   };
+  /* ...... */
+
+  /*  if (status === "authenticated" ) {
+    router.push("/"); 
+  } */
 
   return (
     <nav className="w-full border-b border-black flex justify-center items-center ">
@@ -58,7 +66,7 @@ function Navbar() {
             >
               Categories
               {open && (
-                <div className="absolute pt-3 sm:pt-2 sm:-left-4">
+                <div className="absolute pt-2 sm:pt-2 sm:-left-4">
                   <ul className="  bg-blackk text-customWhite   ">
                     <li className="p-2 transition hover:bg-slate-600 pr-8">
                       <Link
@@ -105,28 +113,50 @@ function Navbar() {
                 Contact
               </Link>
             </li>
-            <li className="mr-2">
-              <Link
-                href="/dashboard"
-                className=" font-semibold sm:text-base xs:text-sm text-green-900 capitalize transition hover:text-slate-600"
-              >
-                Dashboard
-              </Link>
-            </li>
-          </ul>
-
-          <ul className="w-full flex justify-between items-center  ">
             <li className="mx-1">
               <DarkMode />
             </li>
+          </ul>
 
-            <li className=" ml-2 mr-1 border border-slate-400 p-1 transition hover:bg-slate-400  ">
-              <Link href="/">Sign Out</Link>
-            </li>
+          <ul className="w-full flex  justify-end items-center mmd:justify-between ">
+            {status === "authenticated" && (
+              <li className="mr-2 ">
+                <Link
+                  href="/dashboard"
+                  className="whitespace-nowrap font-semibold sm:text-base xs:text-sm text-green-900 capitalize transition hover:text-slate-600"
+                >
+                  My Dashboard
+                </Link>
+              </li>
+            )}
 
-            {/*    <li className="ml-2   border border-slate-400 p-1 transition hover:bg-slate-400 ">
-              <Link href="sign-in">Sign in</Link>
-            </li> */}
+            {status === "authenticated" ? (
+              <div className="flex flex-col justify-center items-center gap-1 mmd:flex-row-reverse">
+                <Image
+                  src={session?.user?.image || "/logo.png"    }
+                  width={35}
+                  height={35}
+                  
+                  className="rounded-full border-2 border-[rgb(182,58,90)]"
+                  alt="profile logo"
+                />
+                <li
+                  className=" ml-2 mr-1 border border-slate-400 p-1 transition text-sm
+               hover:bg-slate-400  "
+                >
+                  <button
+                    className="whitespace-nowrap"
+                    onClick={() => signOut()}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </div>
+            ) : (
+              <li className="ml-2   border border-slate-400 p-1 transition hover:bg-slate-400 ">
+                <Link href="/sign-in">Sign in</Link>
+              </li>
+            )}
 
             {/*     <Link href="/cart">
               <LuShoppingCart />

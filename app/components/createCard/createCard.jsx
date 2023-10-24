@@ -49,11 +49,7 @@ function CreateCard() {
             />
           </div>
           <div className="mb-2">
-            {/*     <input
-            type="textarea"
-            placeholder="Description"
-            className="w-full h-32 border  p-1 rounded text-blackk "
-          /> */}
+         
             <textarea
               className=" p-1 border outline-none rounded text-blackk w-full"
               placeholder="Description"
