@@ -108,14 +108,16 @@ async function CategoryPage({ params }) {
                     {createdAt.slice(0, 10)}
                   </h1>
                   <Link href={`/posts/${id}`}>
-                    {img === !"" ? (
+                    {img  ? (
+                      
+                      <div className="w-[540px] h-[240px] relative rounded p-0 mx-auto">
                       <Image
                         src={img}
-                        width={540}
-                        height={240}
-                        className="mx-auto rounded opacity-80 "
+                        fill
+                        className=" rounded  absolute object-cover opacity-80 "
                         alt="pic"
                       />
+                    </div>
                     ) : (
                       <Image
                         src="/sound.jpg"

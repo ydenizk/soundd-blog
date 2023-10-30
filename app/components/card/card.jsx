@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiPlay } from "react-icons/hi2";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
 import EditDeleteBtns from "../editDeleteBtns/editDeleteBtns";
 
@@ -19,21 +19,22 @@ async function Card({ post }) {
                 shadow-lg    duration-500 "
       >
         <h1 className="px-5 pb-2 text-sm ">
-          Posted by: 
+          Posted by:
           <span className="font-bold tracking-wide capitalize pr-1">
-            {post.author.name} 
+            {post.author.name}
           </span>
-         at {post.createdAt.slice(0, 10)}
+          at {post.createdAt.slice(0, 10)}
         </h1>
-        <Link href={`/api/posts/${post.id}}`}>
-          {post.img === !"" ? (
-            <Image
-              src={post.img}
-              width={540}
-              height={240}
-              className="mx-auto rounded opacity-80 "
-              alt="pic"
-            />
+        <Link href={`/posts/${post.id}`}>
+          {post.img ? (
+            <div className="w-[540px] h-[240px] relative mx-auto">
+              <Image
+                src={post.img}
+                fill
+                className="mx-auto rounded  absolute object-cover opacity-80 "
+                alt="pic"
+              />
+            </div>
           ) : (
             <Image
               src="/sound.jpg"
@@ -53,7 +54,7 @@ async function Card({ post }) {
             >
               {post.catName}
             </Link>
-<EditDeleteBtns post={post} />
+            <EditDeleteBtns post={post} />
           </div>
 
           <h1 className="mt-4 font-bold text-xl leading-6 ">{post.about}</h1>

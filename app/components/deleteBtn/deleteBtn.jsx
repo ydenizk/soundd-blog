@@ -9,6 +9,21 @@ const router=useRouter()
 
   const handleClick = async () => {
 
+    /* cloudinary delete kısmı */
+
+const deleteImg=async (publicId)=>{
+  const res=await fetch("/api/removeImage",{
+method:"POST",
+headers: { "Content-type": "application/json" },
+body: JSON.stringify({ publicId }),
+
+
+  })
+
+}
+
+    /* cloudinary delete END */
+
     const confirmed = window.confirm("Are you sure to delete this article ");
 
     if (confirmed) {
@@ -19,6 +34,10 @@ const router=useRouter()
         });
         if (res.ok) {
           console.log("Article deleted..");
+          //asağıgısı cloudinary
+          const post=await res.json()
+          const {publicId}=post
+          await deleteImg(publicId)
           router.refresh()
         }
       } catch (error) {
