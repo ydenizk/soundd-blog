@@ -5,7 +5,7 @@ import Link from "next/link";
 //import data from "@/app/maninData";
 import { useRouter } from "next/navigation";
 
-function CreateCard() {
+function EditForm({ singlePost }) {
   const [bandName, setBandName] = useState("");
   const [about, setAbout] = useState("");
   const [desc, setDesc] = useState("");
@@ -21,14 +21,34 @@ function CreateCard() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await fetch("api/categories");
+      const res = await fetch("/api/categories");
 
       const catNames = await res.json();
       setCategories(catNames);
     };
 
     fetchCategories();
-  }, []);
+
+
+    const initialPostValues = () => {
+      setBandName(singlePost.bandName);
+      setAbout(singlePost.about);
+      setDesc(singlePost.desc);
+      setPublicId(singlePost.publicId);
+      setSelectedCategory(singlePost.catName);
+      setImg(singlePost.img);
+    };
+
+    initialPostValues();
+  }, [
+    singlePost.bandName,
+    singlePost.about,
+    singlePost.desc,
+    singlePost.publicId,
+    singlePost.catName,
+    singlePost.img,
+    singlePost.selectedCategory
+  ]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,8 +59,8 @@ function CreateCard() {
     }
 
     try {
-      const res = await fetch("api/posts/", {
-        method: "POST",
+      const res = await fetch( `/api/posts/${singlePost.id}`, {
+        method: "PUT",
         headers: {
           "Content-type": "application/json",
         },
@@ -69,6 +89,7 @@ function CreateCard() {
         SOUNDD New Music && Reviews
       </h1>
       <h3 className="text-xl mb-6">~ </h3>
+      <h3 className="text-xl mb-6 uppercase font-semibold text-green-900">Update your article </h3>
       <div className="max-w-2xl w-full p-4 mx-auto border shadow rounded ">
         <div
           className="flex justify-between items-center bg-white p-2 tracking-wide font-sans
@@ -102,7 +123,7 @@ function CreateCard() {
               type="text"
               placeholder="Specify the related band name in your article "
               className="w-full border p-1 rounded outline-none text-blackk "
-              //value={bandName}
+              value={bandName}
               onChange={(e) => setBandName(e.target.value)}
             />
           </div>
@@ -111,7 +132,7 @@ function CreateCard() {
               type="text"
               placeholder="Title"
               className="w-full  border p-1 outline-none rounded text-blackk "
-              //value={about}
+              value={about}
               onChange={(e) => setAbout(e.target.value)}
             />
           </div>
@@ -120,7 +141,7 @@ function CreateCard() {
               className=" p-1 border outline-none rounded text-blackk w-full"
               placeholder="Description"
               rows="8"
-              //value={desc}
+              value={desc}
               onChange={(e) => setDesc(e.target.value)}
             ></textarea>
           </div>
@@ -129,17 +150,19 @@ function CreateCard() {
               className="mb-2 appearance-none outline-none mt-1 bg-slate-300 text-right
              border rounded p-1 px-4"
               onChange={(e) => setSelectedCategory(e.target.value)}
+              value={selectedCategory}
             >
               <option value="">Select A Category</option>
               {categories.map((d) => (
-                <option value={d.catName}> {d.catTitle} </option>
+                <option key={d.id} value={d.catName}> {d.catTitle} </option>
               ))}
+
             </select>
             <button
               type="submit"
-              className="p-1 px-4 bg-blackk text-slate-100  hover:bg-slate-700 transition  border rounded"
+              className="p-1 px-4 bg-green-900 text-slate-100  hover:bg-green-950 transition  border rounded"
             >
-              Send
+             Update
             </button>
           </div>
           {error && (
@@ -151,4 +174,4 @@ function CreateCard() {
   );
 }
 
-export default CreateCard;
+export default EditForm;

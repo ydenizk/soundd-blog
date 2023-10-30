@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const { status,data:session } = useSession();
+  const { status, data: session } = useSession();
   const router = useRouter();
 
   /* Dark MOde... */
@@ -133,10 +133,9 @@ function Navbar() {
             {status === "authenticated" ? (
               <div className="flex flex-col justify-center items-center gap-1 mmd:flex-row-reverse">
                 <Image
-                  src={session?.user?.image || "/logo.png"    }
+                  src={session?.user?.image || "/logo.png"}
                   width={35}
                   height={35}
-                  
                   className="rounded-full border-2 border-[rgb(182,58,90)]"
                   alt="profile logo"
                 />
@@ -153,7 +152,7 @@ function Navbar() {
                 </li>
               </div>
             ) : (
-              <li className="ml-2   border border-slate-400 p-1 transition hover:bg-slate-400 ">
+              <li className="ml-2   border border-slate-400 p-1 transition hover:bg-slate-400 mmd:mx-auto ">
                 <Link href="/sign-in">Sign in</Link>
               </li>
             )}
