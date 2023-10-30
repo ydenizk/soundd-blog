@@ -13,10 +13,10 @@ async function Card({ post }) {
   const isEditable = session && session?.user?.email === post.authorEmail;
 
   return (
-    <div>
+    <div className="mmd:flex mmd:flex-col mmd:justify-center mmd:items-center">
       <div
         className=" w-[580px] h-auto py-6  mb-8  transition
-                shadow-lg    duration-500 "
+                shadow-lg    duration-500  sm:w-[480px] xs:w-[400px]"
       >
         <h1 className="px-5 pb-2 text-sm ">
           Posted by:
@@ -27,11 +27,11 @@ async function Card({ post }) {
         </h1>
         <Link href={`/posts/${post.id}`}>
           {post.img ? (
-            <div className="w-[540px] h-[240px] relative mx-auto">
+            <div className="w-[540px] h-[240px] relative mx-auto sm:w-[470px] xs:w-[390px]">
               <Image
                 src={post.img}
                 fill
-                className="mx-auto rounded  absolute object-cover opacity-80 "
+                className="mx-auto rounded  absolute object-cover opacity-90 "
                 alt="pic"
               />
             </div>
@@ -40,7 +40,7 @@ async function Card({ post }) {
               src="/sound.jpg"
               width={540}
               height={240}
-              className="mx-auto rounded opacity-80 "
+              className="mx-auto rounded opacity-90 "
               alt="pic"
             />
           )}

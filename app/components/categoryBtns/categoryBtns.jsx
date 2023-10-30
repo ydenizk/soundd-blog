@@ -19,7 +19,7 @@ async function CategoryBtns() {
   return (
     <div className="w-full flex justify-center items-center my-12">
       <div className="max-w-5xl w-full h-auto  ">
-        <h1 className="text-2xl py-8 px-6 tracking-wide font-semibold">
+        <h1 className="text-2xl py-8 px-6 tracking-wide font-semibold sm:w-full sm:text-center ">
           Most Popular Categories
         </h1>
 

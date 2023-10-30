@@ -5,7 +5,7 @@ export const banner=[
     genre:"Classic Rock",
     desc:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe possimus, accusantium optio ratione voluptate deleniti voluptatum cupiditate veritatis necessitatibus, nihil odio in modi suscipit. Reprehenderit minus quo ex magni option",
     img:"/music-1.jpg",
-    lnk:"/classic-rock"
+    lnk:"/categories/classic-rock"
 },
     {
     id:2,
@@ -13,7 +13,7 @@ export const banner=[
     genre:"Psychedelic",
     desc:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe possimus, accusantium optio ratione voluptate deleniti voluptatum cupiditate veritatis necessitatibus, nihil odio in modi suscipit. Reprehenderit minus quo ex magni option",
     img:"/music-2.jpg",
-    lnk:"/psychedelic"
+    lnk:"/categories/psychedelic"
 },
     {
     id:3,
@@ -21,7 +21,7 @@ export const banner=[
     genre:"Indie",
     desc:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe possimus, accusantium optio ratione voluptate deleniti voluptatum cupiditate veritatis necessitatibus, nihil odio in modi suscipit. Reprehenderit minus quo ex magni option",
     img:"/music-3.jpg",
-    lnk:"/psychedelic"
+    lnk:"/categories/psychedelic"
 },
 
 

@@ -24,7 +24,7 @@ async function CategoryPage({ params }) {
 
   return (
     <div className="flex justify-center items-center py-10 ">
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-6xl mx-auto">
         <div className="  border-b border-blackk mb-10">
           <h1
             className="w-full max-w-6xl text-center mb-10 text-white   
@@ -32,7 +32,8 @@ async function CategoryPage({ params }) {
           >
             {category}
           </h1>
-          <div className="flex justify-center items-start gap-10 my-16 mx-4">
+          <div className="flex justify-center items-start gap-10 my-16 mx-4
+           mmd2:flex-col-reverse mmd2:items-center">
             {posts.length > 0 ? (
               <>
                 {posts[0].img ? (
@@ -41,7 +42,7 @@ async function CategoryPage({ params }) {
                     width={540}
                     height={240}
                     alt="pic"
-                    className="opacity-70 contrast-200"
+                    className="opacity-90 contrast-200"
                   />
                 ) : (
                   <Image
@@ -49,12 +50,12 @@ async function CategoryPage({ params }) {
                     width={540}
                     height={240}
                     alt="pic"
-                    className="opacity-70 contrast-200"
+                    className="opacity-90 contrast-200"
                   />
                 )}
                 <h1
                   className="tracking-wide capitalize font-bold  mt-8 
-               text-4xl"
+               text-4xl mmd2:text-2xl"
                 >
                   {posts[0].about}...
                 </h1>
@@ -70,7 +71,7 @@ async function CategoryPage({ params }) {
                 />
                 <h1
                   className="tracking-wide capitalize font-bold  mt-8 
-              text-4xl"
+              text-4xl mmd2:text-2xl"
                 >
                   {` New Music news and album  Reviews  about ${category} genre`}
                 </h1>
@@ -80,9 +81,9 @@ async function CategoryPage({ params }) {
         </div>
 
         {/* alt taraf */}
-        <div className="flex justify-between py-12  px-6">
+        <div className="flex justify-between py-12  px-6  mmd:justify-center">
           <div>
-{posts.length>0 ? (posts.map((post) => {
+              {posts.length>0 ? (posts.map((post) => {
               const {
                 id,
                 bandName,
@@ -98,7 +99,7 @@ async function CategoryPage({ params }) {
                 <div
                   key={id}
                   className=" w-[580px] h-auto py-6 mb-8   
-                     transition-all shadow-lg   duration-500 "
+                     transition-all shadow-lg   duration-500 sm:w-[480px] xs:w-[400px]"
                 >
                   <h1 className="px-5 pb-2 text-sm ">
                     Posted by:
@@ -110,11 +111,11 @@ async function CategoryPage({ params }) {
                   <Link href={`/posts/${id}`}>
                     {img  ? (
                       
-                      <div className="w-[540px] h-[240px] relative rounded p-0 mx-auto">
+                      <div className="w-[540px] h-[240px] relative rounded p-0 mx-auto sm:w-[470px] xs:w-[390px]">
                       <Image
                         src={img}
                         fill
-                        className=" rounded  absolute object-cover opacity-80 "
+                        className=" rounded  absolute object-cover opacity-90 "
                         alt="pic"
                       />
                     </div>
@@ -123,7 +124,7 @@ async function CategoryPage({ params }) {
                         src="/sound.jpg"
                         width={540}
                         height={240}
-                        className="mx-auto rounded opacity-80 "
+                        className="mx-auto rounded opacity-90 "
                         alt="pic"
                       />
                     )}

@@ -19,14 +19,10 @@ function Navbar() {
   const handleMouseLeave = () => {
     setOpen(false);
   };
-  /* ...... */
 
-  /*  if (status === "authenticated" ) {
-    router.push("/"); 
-  } */
 
   return (
-    <nav className="w-full border-b border-black flex justify-center items-center ">
+    <nav className="w-full border-b border-black flex justify-center items-center mx-auto">
       <div className="w-full max-w-6xl flex justify-center items-center p-4 mmd:flex-col  ">
         <Link href="/" className="flex-1 mmd:mb-2">
           <Image src="/logo.png" width={120} height={120} alt="logo" />
@@ -123,7 +119,8 @@ function Navbar() {
               <li className="mr-2 ">
                 <Link
                   href="/dashboard"
-                  className="whitespace-nowrap font-semibold sm:text-base xs:text-sm text-green-900 capitalize transition hover:text-slate-600"
+                  className="whitespace-nowrap font-semibold sm:text-base xs:text-sm
+                   bg-slate-300 capitalize  text-slate-700 transition hover:bg-slate-400 border p-2 border-slate-200"
                 >
                   My Dashboard
                 </Link>
@@ -136,11 +133,11 @@ function Navbar() {
                   src={session?.user?.image || "/logo.png"}
                   width={35}
                   height={35}
-                  className="rounded-full border-2 border-[rgb(182,58,90)]"
+                  className="rounded-full border-2 border-slate-500"
                   alt="profile logo"
                 />
                 <li
-                  className=" ml-2 mr-1 border border-slate-400 p-1 transition text-sm
+                  className=" ml-2 mr-1 border border-slate-400 p-1 transition text-xs
                hover:bg-slate-400  "
                 >
                   <button
@@ -157,9 +154,7 @@ function Navbar() {
               </li>
             )}
 
-            {/*     <Link href="/cart">
-              <LuShoppingCart />
-            </Link> */}
+       
           </ul>
         </div>
       </div>

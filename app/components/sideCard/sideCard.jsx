@@ -19,7 +19,7 @@ async function SideCard() {
   const posts = await getData();
 
   return (
-    <div className=" h-auto max-h-[660px] w-84 pl-2 border-l border-slate-300 ">
+    <div className=" h-auto max-h-[660px] w-72 pl-2 border-l border-slate-300 mmd:hidden ">
       <div className="leading-5 mb-6 border-b pb-2 border-b-slate-300">
         <h3 className="text-sm">Check out</h3>
         <h1 className="uppercase font-bold">Top Posts</h1>
@@ -34,21 +34,22 @@ async function SideCard() {
          shadow   duration-500 p-3    "
           >
   
-              {post.img === !"" ? (
-              <Image
-                src={post.img}
-                width={135}
-                height={60}
-                alt="pic"
-                className="opacity-80 contrast-200"
-              />
+              {post.img ? (
+               <div className="w-[135px] h-[75px] relative mx-auto">
+               <Image
+                 src={post.img}
+                 fill
+                 className="mx-auto rounded  absolute object-cover opacity-90 "
+                 alt="pic"
+               />
+             </div>
             ) : (
               <Image
                 src="/sound.jpg"
                 width={135}
                 height={60}
                 alt="pic"
-                className="opacity-80 contrast-200"
+                className="opacity-90 contrast-200"
               />
             )}
             <div className="w-48">

@@ -11,7 +11,8 @@ function Footer() {
         className="h-64  bg-blackk flex gap-x-8 px-16 mx-auto items-center justify-around 
          mmd:grid-cols-2">
         <div className="text-left">
-          <h1 className="uppercase text-xl  font-bold tracking-wide mb-3 text-slate-100 pl-1">
+          <h1 className="uppercase text-xl  font-bold tracking-wide mb-3 text-slate-100
+           pl-1 xs:text-base">
             CONTACT US
           </h1>
           <div className="mb-2 text-stone-300">
@@ -29,7 +30,7 @@ function Footer() {
           </div>
         </div>
         <div className="mmd:text-left sm:text-right">
-          <h1 className="uppercase text-xl font-bold tracking-wide mb-3 text-slate-100">
+          <h1 className="uppercase text-xl font-bold tracking-wide mb-3 text-slate-100 xs:text-base">
             CHECK OUT{" "}
           </h1>
 

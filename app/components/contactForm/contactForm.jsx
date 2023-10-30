@@ -4,32 +4,35 @@ function ContactForm() {
   return (
     <>
       <form
-        className="flex flex-col gap-4 justify-center items-center 
+        className="flex flex-col gap-2 justify-center items-center 
           w-full max-w-[480px] mx-auto     border border-blackk p-2 py-6 "
       >
         <div className=" w-[400px]">
           <input
-            className="w-[400px] h-12 text-blackk text-lg border border-slate-500 rounded outline-none"
+            className="w-[400px] h-12 p-1 text-blackk text-lg border border-slate-500 rounded outline-none"
             type="text"
             id="name"
             required
+            placeholder="Name"
           />
         </div>
         <div>
           <input
             required
             id="email"
-            type="text"
-            className="w-[400px] h-12 text-blackk text-lg border border-slate-500 rounded  outline-none"
+            type="email"
+            placeholder="Email"
+            className="w-[400px] h-12 p-1 text-blackk text-lg border border-slate-500 rounded  outline-none"
           />
         </div>
         <div className="lg:text-center">
           <textarea
             required
             id="message"
-            cols="39"
+            cols="45"
             rows="8"
-            className="rounded text-blackk outline-none border border-slate-500 "
+            placeholder="Message"
+            className="rounded text-blackk p-1 outline-none border border-slate-500 "
           ></textarea>
         </div>
         <button

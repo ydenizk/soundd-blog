@@ -20,21 +20,20 @@ async function SinglePostPage({ params }) {
     <div className="flex justify-content items-center py-16 ">
       <div className="w-full max-w-3xl h-auto  flex flex-col gap-12 items-center mx-auto">
         {singlePost.img ? (
-          <div className="w-[540px] h-[240px] relative mx-auto p-0 ">
-            <Image
-              src={singlePost.img}
-              fill
-              className=" absolute object-cover opacity-80 "
-              alt="pic"
-            />
-          </div>
+          <Image
+            src={singlePost.img}
+            width={540}
+            height={240}
+            className="  object-cover opacity-90 "
+            alt="pic"
+          />
         ) : (
           <Image
             src="/sound.jpg"
             width={540}
             height={240}
             alt="pic"
-            className="opacity-70 contrast-200"
+            className="opacity-90 contrast-200"
           />
         )}
         <div className="text-center p-4">
@@ -50,18 +49,18 @@ async function SinglePostPage({ params }) {
 
           <h2 className="font-serif tracking-wider my-6 text-sm">
             by
-            <span className="text-base font-serif capitalize ml-1 ">
+            <span className="text-base font-serif capitalize ml-1 font-semibold">
               {singlePost.authorEmail.slice(0, 5)}{" "}
             </span>
           </h2>
           <h3 className="text-xl ">~ </h3>
 
           <p className="my-8 font-light font-serif  tracking-wide leading-7 text-left">
-            {singlePost.desc}
+            {singlePost.desc.slice(0, 200)}
           </p>
           <Image src="/single.jpg" width={720} height={514} />
           <p className="my-8 opacity-90 font-light font-serif  tracking-wide leading-7 text-left">
-            {singlePost.desc}
+            {singlePost.desc.slice(200)}
           </p>
         </div>
       </div>

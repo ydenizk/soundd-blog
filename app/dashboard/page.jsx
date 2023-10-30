@@ -36,9 +36,9 @@ async function DashboardPage() {
   }
 
   return (
-    <div className="w-full  flex justify-center items-center ">
-      <div className="w-full max-w-2xl flex flex-col justify-center items-center my-8 ">
-        <div className=" w-full flex justify-between items-center my-8">
+    <div className="w-full  flex justify-center items-center mx-auto">
+      <div className="w-full max-w-2xl flex flex-col justify-center items-center my-8 mx-auto">
+        <div className=" w-full flex justify-between items-center my-8 mmd2:px-4">
           <h1 className="text-lg font-semibold w-48 text-left border-b border-slate-400">
             My Posts
           </h1>
@@ -60,7 +60,7 @@ async function DashboardPage() {
           </div>
         </div>
         {/* Card START */}
-        <div className="w-full justify-center items-center gap-6 ">
+        <div className="w-full justify-center items-center gap-8 mx-auto">
           {posts.length < 1 ? (
             <div className="p-16 flex justify-center items-center">
               <h1 className="font-semıibold uppercase text-xl ">
@@ -73,7 +73,7 @@ async function DashboardPage() {
                 <div
                   key={post.id}
                   className=" w-[580px] h-auto py-6  mb-8  transition
-                     shadow-lg    duration-500  "
+                     shadow-lg mx-auto   duration-500  sm:w-[480px] xs:w-[400px]"
                  >
                   <h1 className="px-5 pb-2 text-sm  whitespace-nowrap">
                     Posted by:
@@ -82,18 +82,20 @@ async function DashboardPage() {
                     </span>
                     at {post.createdAt.slice(0, 10)} 
 
-                    <span className="text-right w-full ml-[180px]">
+                    <span className="text-right w-full ml-[180px] sm:ml-16 xs:ml-2">
                       <span className="text-green-900 font-semibold">Updated at: </span>
                        {post.updatedAt.slice(0,10)} </span>
                   </h1>
                   <Link href={`/api/posts/${post.id}}`}>
-                    {post.img === !"" ? (
-                      <Image
-                        src={post.img}
-                        width={540}
-                        height={240}
-                        className="mx-auto rounded opacity-80 "
-                      />
+                    {post.img ? (
+                    <div className="w-[540px] h-[240px] relative mx-auto sm:w-[470px] xs:w-[390px]">
+                    <Image
+                      src={post.img}
+                      fill
+                      className="mx-auto rounded  absolute object-cover opacity-80 "
+                      alt="pic"
+                    />
+                  </div>
                     ) : (
                       <Image
                         src="/sound.jpg"

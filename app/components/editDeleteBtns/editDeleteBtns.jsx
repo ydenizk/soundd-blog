@@ -16,7 +16,7 @@ const isEditable = session && session?.user?.email === post.authorEmail;
       <div className="flex justify-center items-center gap-2">
         <Link
           href={`/editPost/${post.id}`}
-          className="text-xs capitalize p-1 bg-blue-500 rounded text-white"
+          className="text-xs capitalize p-1 bg-blue-400 rounded text-white"
         >
           Edit
         </Link>

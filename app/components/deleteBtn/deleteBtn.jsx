@@ -49,7 +49,7 @@ body: JSON.stringify({ publicId }),
   return (
     <>
       <button
-        className="text-xs capitalize p-1 bg-red-700 rounded text-white"
+        className="text-xs capitalize p-1 bg-red-400 rounded text-white"
         onClick={handleClick}
       >
         Delete

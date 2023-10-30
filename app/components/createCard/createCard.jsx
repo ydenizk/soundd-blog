@@ -101,7 +101,7 @@ function CreateCard() {
 
   return (
     <div className="flex flex-col justify-center items-center my-16">
-      <h1 className="italic font-serif text-2xl   font-semibold my-4 text-">
+      <h1 className="italic font-serif text-2xl   font-semibold my-4 ">
         SOUNDD New Music && Reviews
       </h1>
       <h3 className="text-xl mb-6">~ </h3>
@@ -110,7 +110,7 @@ function CreateCard() {
           className="flex justify-between items-center bg-white p-2 tracking-wide font-sans
          my-8 border "
         >
-          <h1 className="max-w-xs text-slate-700  font-extralight ">
+          <h1 className="max-w-xs text-slate-700  font-extralight xs:pr-1">
             You can send your post below.After a short editorial check it will
             be published.
           </h1>

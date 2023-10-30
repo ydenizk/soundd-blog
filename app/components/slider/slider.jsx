@@ -31,7 +31,8 @@ function Slider() {
 
   return (
     <div className="flex flex-col justify-center items-center py-8 ">
-      <div className="w-full max-w-6xl flex items-center   px-6     relative overflow-hidden h-[420px]">
+      <div className="w-full max-w-6xl flex items-center px-6 
+       relative overflow-hidden h-[420px]">
         {banner.map((dt) => {
           const { id, title, desc, img, lnk, genre } = dt;
 
@@ -55,7 +56,11 @@ function Slider() {
                   {desc}{" "}
                 </p>
 
-                <Link href={lnk} className="  p-3  bg-slate-700 transition hover:bg-slate-600 duration-300 text-customWhite">
+                <Link
+                  href={lnk}
+                  className="  p-3  bg-slate-700 transition hover:bg-slate-600 
+                  duration-300 text-customWhite"
+                >
                   Go to {`${genre}`}{" "}
                 </Link>
               </div>
@@ -64,10 +69,7 @@ function Slider() {
         })}
       </div>
       <div className="  flex -bottom-10 right-16   text-blackk  z-10">
-        {/*      <button className="mx-2" onClick={prev}>
-            left
-          </button>
-          <button onClick={next}>right</button> */}
+       
         {banner.map((b, inx) => {
           return (
             <button
