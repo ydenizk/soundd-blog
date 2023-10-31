@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { CldUploadButton, CldUploadWidgetResults } from "next-cloudinary";
+import { CldUploadButton} from "next-cloudinary";
 
 function CreateCard() {
   const [bandName, setBandName] = useState("");
