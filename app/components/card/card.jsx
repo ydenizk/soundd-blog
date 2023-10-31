@@ -17,7 +17,7 @@ async function Card({ post }) {
       <div
         className=" w-[580px] h-auto py-6  mb-8  transition
                 shadow-lg    duration-500  sm:w-[480px] xs:w-[400px]"
-      >
+          >
         <h1 className="px-5 pb-2 text-sm ">
           Posted by:
           <span className="font-bold tracking-wide capitalize pr-1">

@@ -22,17 +22,18 @@ function Slider() {
     });
   };
 
-  /* useEffect(()=>{
-  setTimeout(() => {
-    next()
-  }, 7000);
-
-},[imgIndex]) */
+  useEffect(() => {
+    setTimeout(() => {
+      next();
+    }, 7000);
+  }, [imgIndex]);
 
   return (
     <div className="flex flex-col justify-center items-center py-8 ">
-      <div className="w-full max-w-6xl flex items-center px-6 
-       relative overflow-hidden h-[420px]">
+      <div
+        className="w-full max-w-6xl flex items-center px-6 
+       relative overflow-hidden h-[420px]"
+      >
         {banner.map((dt) => {
           const { id, title, desc, img, lnk, genre } = dt;
 
@@ -69,7 +70,6 @@ function Slider() {
         })}
       </div>
       <div className="  flex -bottom-10 right-16   text-blackk  z-10">
-       
         {banner.map((b, inx) => {
           return (
             <button

@@ -92,7 +92,7 @@ async function DashboardPage() {
                     <Image
                       src={post.img}
                       fill
-                      className="mx-auto rounded  absolute object-cover opacity-80 "
+                      className="mx-auto rounded  absolute object-cover opacity-90 "
                       alt="pic"
                     />
                   </div>
@@ -101,7 +101,7 @@ async function DashboardPage() {
                         src="/sound.jpg"
                         width={540}
                         height={240}
-                        className="mx-auto rounded opacity-80 "
+                        className="mx-auto rounded opacity-90 "
                       />
                     )}
                   </Link>
