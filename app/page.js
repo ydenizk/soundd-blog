@@ -18,7 +18,7 @@ const getData = async () => {
   return res.json();
 };
 
- async function Home() {
+ export default async function Home() {
   const posts = await getData();
 
   return (
@@ -96,4 +96,4 @@ const getData = async () => {
   );
 }
 
-export default Home
+

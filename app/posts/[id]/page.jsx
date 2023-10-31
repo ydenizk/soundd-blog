@@ -19,7 +19,7 @@ async function SinglePostPage({ params }) {
   return (
     <div className="flex justify-content items-center py-16 ">
       <div className="w-full max-w-3xl h-auto  flex flex-col gap-12 items-center mx-auto">
-        {singlePost.img ? (
+        {singlePost.img ===! null ? (
           <Image
             src={singlePost.img}
             width={540}
