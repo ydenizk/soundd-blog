@@ -99,6 +99,7 @@ async function DashboardPage() {
                     ) : (
                       <Image
                         src="/sound.jpg"
+                        alt="pic"
                         width={540}
                         height={240}
                         className="mx-auto rounded opacity-90 "

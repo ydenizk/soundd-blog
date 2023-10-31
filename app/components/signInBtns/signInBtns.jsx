@@ -18,6 +18,7 @@ function SignInBtns() {
             width={40}
             height={40}
             className="rounded-full"
+            alt="github logo"
           />
           <h1>Sing in with Github </h1>
         </button>
@@ -30,6 +31,7 @@ function SignInBtns() {
             width={40}
             height={40}
             className="rounded-full"
+            alt="google logo"
           />
           <h1>Sing in with Github </h1>
         </button>

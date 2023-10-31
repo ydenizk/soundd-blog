@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <div className="flex justify-center items-center w-full max-w-5xl my-16 mx-auto">
       <div className="flex justify-center p-2 gap-10 mx-auto mmd:gap-6 mmd2:flex-col mmd2:items-center">
-        <Image src="/single.jpg" width={540} height={386} />
+        <Image src="/single.jpg" width={540} height={386} alt="logo" />
         <div classname="w-full max-w-sm p-2  ">
           <h1 className="uppercase font-bold text-2xl text-left 
           tracking-wide mb-8  

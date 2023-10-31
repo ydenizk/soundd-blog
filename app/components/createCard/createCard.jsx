@@ -198,7 +198,7 @@ outline-none font-semibold bg-slate-300 py-2 rounded relative"
             >
               <option value="">Select A Category</option>
               {categories.map((d) => (
-                <option value={d.catName}> {d.catTitle} </option>
+                <option value={d.catName} key={d.id}> {d.catTitle} </option>
               ))}
             </select>
             <button

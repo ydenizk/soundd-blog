@@ -18,7 +18,7 @@ function SamplePost() {
  
       <div className="text-center p-4">
         <h1 className="uppercase text-3xl font-semibold tracking-wider">
-      Roots of Rock'n Roll
+      Roots of Rock&apos;n Roll
         </h1>
 
         <h3 className="italic font-serif text-lg   font-extralight my-6  ">
@@ -41,7 +41,7 @@ function SamplePost() {
                 sed turpis. Sed lectus vestibulum mattis ullamcorper velit sed Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius,
                 qui atque. At reprehenderit itaque Arcu
         </p>
-        <Image src="/single.jpg" width={720} height={514} />
+        <Image src="/single.jpg" width={720} height={514} alt='pic' />
         <p className="my-8 opacity-90 font-light font-serif  tracking-wide leading-7 text-left">
         Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius,
                 qui atque. At reprehenderit itaque Arcu felis bibendum ut tristique et egestas quis ipsum. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Et malesuada fames ac turpis egestas. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Pellentesque massa placerat duis ultricies lacus 

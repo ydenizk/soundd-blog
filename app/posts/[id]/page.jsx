@@ -58,7 +58,7 @@ async function SinglePostPage({ params }) {
           <p className="my-8 font-light font-serif  tracking-wide leading-7 text-left">
             {singlePost.desc.slice(0, 200)}
           </p>
-          <Image src="/single.jpg" width={720} height={514} />
+          <Image src="/single.jpg" width={720} height={514} alt="pic"/>
           <p className="my-8 opacity-90 font-light font-serif  tracking-wide leading-7 text-left">
             {singlePost.desc.slice(200)}
           </p>
