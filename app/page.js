@@ -26,7 +26,7 @@ const getData = async () => {
       <section className="w-full  flex justify-between  max-w-6xl mx-auto mmd:items-center  ">
         <div className="w-full max-w-6xl p-6 flex flex-col justify-center  ">
          
-          {posts.slice(0, 4).map((post) => {
+          {posts?.slice(0, 4).map((post) => {
             return <Card post={post} key={post.id} />;
           })}
         </div>
