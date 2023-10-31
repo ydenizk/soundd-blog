@@ -1,5 +1,4 @@
 import React from "react";
-import data from "@/app/maninData";
 import Link from "next/link";
 
 const getData = async () => {
