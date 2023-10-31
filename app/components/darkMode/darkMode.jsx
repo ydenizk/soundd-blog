@@ -1,7 +1,7 @@
 
 "use client"
 
-import { ThemeContext } from "@/app/context/context";
+import { ThemeContext } from "@/context/context";
 import React, { useContext } from "react";
 
 function DarkMode() {

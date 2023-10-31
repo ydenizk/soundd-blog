@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
-import { ThemeProvider } from "./context/context";
+import { ThemeProvider } from "@/context/context";
 import { NextAuthProvider } from "./components/providers/providers";
 
 export const metadata = {
