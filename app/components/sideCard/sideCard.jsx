@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const getData = async () => {
   try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
+    const res = await fetch(`${process.env.POST_URL}`, {
       cache: "no-store",
     });
     if (res.ok) {
