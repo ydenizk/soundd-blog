@@ -19,12 +19,12 @@ async function SinglePostPage({ params }) {
   return (
     <div className="flex justify-content items-center py-16 ">
       <div className="w-full max-w-3xl h-auto  flex flex-col gap-12 items-center mx-auto">
-        {singlePost ? (
+        {singlePost.img ? (
           <Image
             src={singlePost.img}
-            width={540}
+            width={640}
             height={240}
-            className="  object-cover opacity-90 "
+            className="   opacity-90 "
             alt="pic"
           />
         ) : (

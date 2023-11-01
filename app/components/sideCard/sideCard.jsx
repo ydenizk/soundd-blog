@@ -4,15 +4,18 @@ import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed!");
+  try {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
+      cache: "no-store",
+    });
+    if (res.ok) {
+      const posts = await res.json();
+      return posts;
+    }
+  } catch (error) {
+    console.log(error);
   }
-
-  return res.json();
+  return null;
 };
 
 async function SideCard() {
@@ -26,7 +29,7 @@ async function SideCard() {
       </div>
 <>
 
-{posts.slice(0,4).map((post) => {
+{posts?.slice(0,4).map((post) => {
         return (
           <div
             key={post.id}

@@ -87,4 +87,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export {Slider}

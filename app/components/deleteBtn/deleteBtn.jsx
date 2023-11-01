@@ -4,23 +4,18 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 function DeleteBtn({ id }) {
-
-const router=useRouter()
+  const router = useRouter();
 
   const handleClick = async () => {
-
     /* cloudinary delete kısmı */
 
-const deleteImg=async (publicId)=>{
-  const res=await fetch("/api/removeImage",{
-method:"POST",
-headers: { "Content-type": "application/json" },
-body: JSON.stringify({ publicId }),
-
-
-  })
-
-}
+    const deleteImg = async (publicId) => {
+      const res = await fetch("/api/removeImage", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ publicId }),
+      });
+    };
 
     /* cloudinary delete END */
 
@@ -35,10 +30,10 @@ body: JSON.stringify({ publicId }),
         if (res.ok) {
           console.log("Article deleted..");
           //asağıgısı cloudinary
-          const post=await res.json()
-          const {publicId}=post
-          await deleteImg(publicId)
-          router.refresh()
+          const post = await res.json();
+          const { publicId } = post;
+          await deleteImg(publicId);
+          router.refresh();
         }
       } catch (error) {
         console.log(error);

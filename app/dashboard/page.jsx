@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import { HiPlay } from "react-icons/hi2";
-import DeleteBtn from "../components/editDeleteBtns/editDeleteBtns";
+
 import EditDeleteBtns from "../components/editDeleteBtns/editDeleteBtns";
 
 //import Card from "../components/card/card";

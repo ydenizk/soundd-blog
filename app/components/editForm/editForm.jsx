@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 //import data from "@/app/maninData";
 import { useRouter } from "next/navigation";
-import { CldUploadButton, CldUploadWidgetResults } from "next-cloudinary";
+import { CldUploadButton } from "next-cloudinary";
 
 function EditForm({ singlePost }) {
   const [bandName, setBandName] = useState("");

@@ -1,19 +1,22 @@
-import Slider from "./components/slider/slider";
+import {Slider}  from "./components/slider/slider";
 import CategoryBtns from "./components/categoryBtns/categoryBtns";
 import Card from "./components/card/card";
-
-
 import SideCard from "./components/sideCard/sideCard";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed!");
+  
+  try {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
+      cache: "no-store",
+    });
+    if (res.ok) {
+      const posts = await res.json();
+      return posts;
+    }
+  } catch (error) {
+    console.log(error);
   }
-  return res.json();
+  return null;
 };
 
  export default async function Home() {

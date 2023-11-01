@@ -2,14 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed!");
-  }  
-  return res.json();
+  try {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
+      cache: "no-store",
+    });
+    if (res.ok) {
+      const categories = await res.json();
+      return categories;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
 };
 
 async function CategoryBtns() {
@@ -23,7 +27,7 @@ async function CategoryBtns() {
         </h1>
 
         <div className="max-w-2xl w-full flex justify-around  ">
-          {categories.map((dt) => {
+          {categories?.map((dt) => {
             const { id, catTitle, catName } = dt;
             return (
               <div
