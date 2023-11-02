@@ -63,7 +63,7 @@ async function SideCard() {
                 <span className="font-bold tracking-wide">
                   {post.createdAt.slice(0, 10)}
                 </span>
-                <Link href={`/posts/${post.id}`}>
+                <Link href={`${process.env.NEXTAUTH_URL}/posts/${post.id}`}>
                   <AiOutlineArrowRight
                     className="pt-1 text-lg  bg-gray-400 transition
             hover:bg-gray-500 rounded p-1  mt-1 text-white l"

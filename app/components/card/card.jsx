@@ -25,7 +25,7 @@ async function Card({ post }) {
           </span>
           at {post.createdAt.slice(0, 10)}
         </h1>
-        <Link href={`/posts/${post.id}`}>
+        <Link href={`${process.env.NEXTAUTH_URL}/posts/${post.id}`}>
           {post.img ? (
             <div className="w-[540px] h-[240px] relative mx-auto sm:w-[470px] xs:w-[390px]">
               <Image
@@ -61,7 +61,7 @@ async function Card({ post }) {
           <p className="text-sm capitalize my-3">
             {post.desc.slice(0, 200)}...
             <Link
-              href={`/posts/${post.id}}`}
+              href={`${process.env.NEXTAUTH_URL}/posts/${post.id}}`}
               className="font-semibold transition hover:text-red-700 "
             >
               READ MORE
