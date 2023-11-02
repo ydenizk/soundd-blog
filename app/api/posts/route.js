@@ -46,10 +46,10 @@ export async function POST(req) {
 
 export async function GET() {
   try {
-    const posts = await prisma.post.findMany(/* {
+    const posts = await prisma.post.findMany({
       include: { author: { select: { name: true } } }, //user dakı name i alıoruz ,author user a bağlıydı
       orderBy: { createdAt: "desc" }, //bunu post ları yeniden eskıye göre sıralamsı için yazdık
-    } */);
+    });
     return NextResponse.json(posts);
   } catch (error) {
     console.log(error);
