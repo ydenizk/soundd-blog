@@ -21,7 +21,7 @@ async function Card({ post }) {
         <h1 className="px-5 pb-2 text-sm ">
           Posted by:
           <span className="font-bold tracking-wide capitalize pr-1">
-            {post.author.name}
+            {post.authorEmail.slice(0,6)}
           </span>
           at {post.createdAt.slice(0, 10)}
         </h1>
