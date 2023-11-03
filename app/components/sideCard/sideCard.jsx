@@ -4,18 +4,13 @@ import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const getData = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
-      cache: "no-store",
-    });
-    if (res.ok) {
-      const posts = await res.json();
-      return posts;
-    }
-  } catch (error) {
-    console.log(error);
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
+    cache: "no-store",
+  });
+  if (res.ok) {
+    const posts = await res.json();
+    return posts;
   }
-  return null;
 };
 
 async function SideCard() {

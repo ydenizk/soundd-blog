@@ -5,7 +5,7 @@ import SideCard from "./components/sideCard/sideCard";
 
 const getData = async () => {
   
-  try {
+
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
       cache: "no-store",
     });
@@ -13,10 +13,6 @@ const getData = async () => {
       const posts = await res.json();
       return posts;
     }
-  } catch (error) {
-    console.log(error);
-  }
-  return null;
 };
 
  export default async function Home() {
