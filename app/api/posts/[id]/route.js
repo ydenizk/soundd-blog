@@ -14,8 +14,7 @@ export async function GET(req, { params }) {
   } catch (error) {
     console.log(error);
     return NextResponse.json(
-      { message: "sth went wrong for post.." },
-      { status: 500 }
+      { message: "sth went wrong for post.." }
     );
   }
 }
