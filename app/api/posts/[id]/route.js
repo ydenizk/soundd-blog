@@ -6,11 +6,11 @@ import { authOptions } from "../../auth/[...nextauth]/route";
 export async function GET(req, { params }) {
   try {
     const id = params.id;
-    const post = await prisma.post.findUnique({
+    const posts = await prisma.post.findUnique({
       where: { id },
     });
 
-    return NextResponse.json(post);
+    return NextResponse.json(posts);
   } catch (error) {
     console.log(error);
     return NextResponse.json(
@@ -19,6 +19,9 @@ export async function GET(req, { params }) {
     );
   }
 }
+
+
+
 
 export async function PUT(req, { params }) {
   const session = getServerSession(authOptions);
